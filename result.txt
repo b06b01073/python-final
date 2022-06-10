@@ -1,0 +1,510 @@
+<div class="card__details details" id="threats-details">
+ <div class="layout-card--split">
+  <div class="layout-card--split__minor">
+  </div>
+  <div class="layout-card--split__major">
+   <h4 class="heading">
+    Threats
+   </h4>
+   <div class="text-body">
+    As noted earlier, Harp Seals have been harvested for thousands of years but currently the population is large and the number of animals harvested is declining.
+    <br/>
+    <br/>
+    Reduced availability of potential prey, especially Polar Cod, Capelin and Herring, is a threat to Harp Seals. Several Harp Seal “invasions” took place in recent decades along the north coast of Norway. By-catch mortality in nets during those events was estimated to be as high as 100,000 animals in 1987 and 21,474 in 1988 (Haug
+    <em>
+     et al.
+    </em>
+    1991). The reason for these emigrations out of their normal range within the Barents and Greenland Seas seems to have been a collapse of Herring and Capelin stocks due to a combination of overfishing and shifting oceanographic conditions (low temperatures and salinity, and extensive ice cover; Haug
+    <em>
+     et al.
+    </em>
+    1991, Woodley and Lavigne 1991). More recently, declining Krill abundance has been correlated with declines in both pup production and body condition of Harp Seals in the Barents Sea region, which are likely related to reductions in sea ice in this area (Øigård
+    <em>
+     et al.
+    </em>
+    2013).
+    <br/>
+    <br/>
+    A small tourist industry that visits the whelping patches in the Gulf of St. Lawrence is not thought to pose any risk to the Seals; it uses a rotational mode of operation such that individual Seals are not visited repeatedly (Kovacs and Innes 1990).
+    <br/>
+    <br/>
+    Oil spills in the Northwest Atlantic off the east coast of Canada remain a threat to Seals. There is a concern about the impacts of tanker traffic, particularly in places like Lancaster Sound in the eastern Canadian Arctic, which is an important Harp Seal summering area (Reijinders
+    <em>
+     et al.
+    </em>
+    1993). The discharge from a ruptured tank on the shore of New Brunswick, Canada in March–April 1969 led to 10,000 to 15,000 Seals being heavily coated with oil. The high number of dead pups washing ashore after this event was evidence of the lethal effects of the oil (St. Aubin 1990). Oil development in the Barents Sea is ongoing and poses a future threat to Harp Seals in the White Sea and West Ice stocks.
+    <br/>
+    <br/>
+    Harp Seals have been found to carry significant loads of contaminants including metals, DDT and PCBs (Ronald
+    <em>
+     et al.
+    </em>
+    1984ab). Organochlorines are still present in their blood, despite DDT levels in the environment (and PCBs to a lesser extent) declining from the early 1970s to the 1980s (Addison
+    <em>
+     et al.
+    </em>
+    1984) and further in the 1990s and 2000s (Muir and de Wit 2010).
+    <br/>
+    <br/>
+    Phocine distemper virus (PDV) was first found in Harp Seals from the West Ice off Jan Mayen in 1987 and 1989. It is widespread in Harp Seals, but only shows up as antibodies; it is not known if there are significant health effects or mortality from PDV infection in this species (Daoust
+    <em>
+     et al.
+    </em>
+    1993, Duignan
+    <em>
+     et al.
+    </em>
+    1997). Harp Seals might have been the carriers responsible for the Harbour Seal PDV epidemic in Europe in 1988 (Markussen and Have 1992). PDV also appeared Harp Seals in the Gulf of St. Lawrence in 1991, but not in epidemic proportions (Daoust
+    <em>
+     et al.
+    </em>
+    1993).
+    <br/>
+    <br/>
+    Global climate warming is of notable concern for this species. There have already been major reductions in the extent and seasonal duration of sea ice cover in the Northern Hemisphere, creating a threat to many species of ice-associated marine mammals (Tynan and DeMaster 1997, Learmonth
+    <em>
+     et al.
+    </em>
+    2006, Kovacs and Lydersen 2008, Laidre
+    <em>
+     et al.
+    </em>
+    2008, Laidre
+    <em>
+     et al.
+    </em>
+    2015). Pinnipeds such as the Harp Seal that are dependent on sea ice for pupping, moulting and resting are likely to be heavily impacted by future changes in their sea ice habitats (Johnston
+    <em>
+     et al.
+    </em>
+    2005, Friedlaender
+    <em>
+     et al.
+    </em>
+    2007, Kovacs
+    <em>
+     et al.
+    </em>
+    2011, Kovacs
+    <em>
+     et al.
+    </em>
+    2012). The high variability in pup production numbers in Canada, as well as the condition declines in the Northeast Atlantic, are thought to be linked to changing oceanographic and sea ice conditions. The degree of plasticity Harp Seals might show with respect to temporal or spatial shifts in breeding times and areas is not known.
+   </div>
+   <div class="text-body">
+   </div>
+  </div>
+ </div>
+ <h4 class="heading">
+  Classification scheme
+ </h4>
+ <table class="table">
+  <thead>
+   <tr>
+    <th colspan="3">
+     Threats
+    </th>
+    <th>
+     Timing
+    </th>
+    <th>
+     Stresses
+    </th>
+    <th>
+     Scope
+    </th>
+    <th>
+     Severity
+    </th>
+    <th>
+     Impact score
+    </th>
+    <th>
+     Invasive species
+    </th>
+    <th>
+     Virus
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     5. Biological resource use
+    </td>
+    <td>
+     5.4. Fishing &amp; harvesting aquatic resources
+    </td>
+    <td>
+     5.4.2. Intentional use: (large scale) [harvest]
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         2. Species Stresses
+        </td>
+        <td>
+         2.1. Species mortality
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     5.4.4. Unintentional effects: (large scale) [harvest]
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         1. Ecosystem stresses
+        </td>
+        <td>
+         1.2. Ecosystem degradation
+        </td>
+        <td>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         2. Species Stresses
+        </td>
+        <td>
+         2.1. Species mortality
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     8. Invasive and other problematic species, genes &amp; diseases
+    </td>
+    <td>
+     8.2. Problematic native species/diseases
+    </td>
+    <td>
+     8.2.1. Unspecified species
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         1. Ecosystem stresses
+        </td>
+        <td>
+         1.2. Ecosystem degradation
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+    </td>
+    <td>
+     8.5. Viral/prion-induced diseases
+    </td>
+    <td>
+     8.5.2. Named species
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         2. Species Stresses
+        </td>
+        <td>
+         2.1. Species mortality
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+     Phocine Distemper Virus (PDV)
+    </td>
+   </tr>
+   <tr>
+    <td>
+     9. Pollution
+    </td>
+    <td>
+     9.2. Industrial &amp; military effluents
+    </td>
+    <td>
+     9.2.1. Oil spills
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         2. Species Stresses
+        </td>
+        <td>
+         2.1. Species mortality
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     9.2.3. Type Unknown/Unrecorded
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         1. Ecosystem stresses
+        </td>
+        <td>
+         1.2. Ecosystem degradation
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+    </td>
+    <td>
+     9.3. Agricultural &amp; forestry effluents
+    </td>
+    <td>
+     9.3.4. Type Unknown/Unrecorded
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         1. Ecosystem stresses
+        </td>
+        <td>
+         1.2. Ecosystem degradation
+        </td>
+        <td>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+   <tr>
+    <td>
+     11. Climate change &amp; severe weather
+    </td>
+    <td>
+     11.1. Habitat shifting &amp; alteration
+    </td>
+    <td>
+    </td>
+    <td>
+     Ongoing
+    </td>
+    <td>
+     <table class="inner-table">
+      <tbody>
+       <tr>
+        <td>
+         1. Ecosystem stresses
+        </td>
+        <td>
+         1.1. Ecosystem conversion
+        </td>
+        <td>
+        </td>
+       </tr>
+       <tr>
+        <td>
+        </td>
+        <td>
+         1.2. Ecosystem degradation
+        </td>
+        <td>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         2. Species Stresses
+        </td>
+        <td>
+         2.2. Species disturbance
+        </td>
+        <td>
+        </td>
+       </tr>
+       <tr>
+        <td>
+        </td>
+        <td>
+         2.3. Indirect species effects
+        </td>
+        <td>
+         2.3.8. Other
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+    <td>
+     Low Impact: 3
+    </td>
+    <td>
+     <a class="invasive-species-link" href="http://www.iucngisd.org/gisd/speciesname/" rel="noopener noreferrer" target="_blank">
+     </a>
+    </td>
+    <td>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</div>
