@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 import json
 import get_species as gs
 import crawl
-
+import arrangement2
 
 app = Flask(__name__)
 
@@ -36,18 +36,18 @@ def search():
 			files.append(cat2Files[k])
 	
 
-	urlsList = gs.loop_files(files, lat=latitude, lon=longitude)
-	speciesDict = dict()
+	infoList = gs.loop_files(files, lat=latitude, lon=longitude)
 
-	for urls in urlsList:
-		speciesDict.update(crawl.crawler(urls))
+	urlsList = []
+	for info in infoList:
+		urlsList.append(info[0])
+
+	speciesDict = crawl.crawler(urlsList)
 
 	# TODO: find the common threats
+	common_threat = arrangement2.getCommonThreat(speciesDict)
 
-	print(speciesDict)
-
-	response = []
-	response = jsonify(json_data)
+	response = jsonify({"commonThreat": common_threat, "speciesList": speciesDict})
 
 	response.headers.add("Access-Control-Allow-Origin", "*")
 	return response

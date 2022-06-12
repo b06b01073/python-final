@@ -1,13 +1,18 @@
 import Nav from "./components/Nav";
 import Landing from "./components/Landing";
+import SpeciesList from "./components/SpeciesList";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Nav />
-      <Landing />
-    </div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/list" element={<SpeciesList />} />
+      </Routes>
+    </Router>
   );
 }
 

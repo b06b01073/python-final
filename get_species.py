@@ -1,6 +1,12 @@
+
+from importlib_metadata import install
+# import matplotlib.pyplot as plt
+import pandas as pd
 import geopandas as gpd
+# import earthpy as et
 import geohash as gh
 import shapely.geometry as sp
+
 
 def get_area_data(filename, lat, lon):
 
@@ -29,19 +35,24 @@ def get_url(area, lat, lon):
     point = sp.Point(lon, lat)
 
     base_url = 'https://www.iucnredlist.org/species/'
-    urls = []
+    info = []
     for i in range(len(area)):
         try:
             if point.within(area['geometry'][i]):
                 url = base_url + str(int(area['ID_NO'][i])) + '/' + str(int(area['ASSESSMENT'][i]))
-                urls.append(url)
+                name = area['BINOMIAL'][i]
+                #datum = [url,name]
+                info.append([url,name])
         except:
             fixed = area['geometry'][i].buffer(0)
             if point.within(fixed):
                 url = base_url + str(int(area['ID_NO'][i])) + '/' + str(int(area['ASSESSMENT'][i]))
-                urls.append(url)
-    no_rep_urls = list(set(urls)) # get rid of repeats
-    return(no_rep_urls)
+                name = area['BINOMIAL'][i]
+                info.append([url,name])
+    no_rep_info = []
+    [no_rep_info.append(i) for i in info if i not in no_rep_info]
+    #no_rep_info = list(set(info)) # get rid of repeats
+    return(no_rep_info)
     
 def loop_files(files, lat, lon):
 
@@ -49,18 +60,15 @@ def loop_files(files, lat, lon):
     ### files - a list of filenames based on the statuses the user selects
     ### takes list of filenames and a latitude and longitude location
     ### returns list of urls
-    urls = []
+    info = []
     for i in range(len(files)):
         area = get_area_data(files[i],lat,lon)
-        urls.append(get_url(area,lat,lon))
-    return(urls)
+        [info.append(j) for j in get_url(area,lat,lon)]
+    return(info)
 
 ## example
-if __name__ == "__main__":
-    testlat = 53.759180
-    testlon = 29.208048
-    files = ['endangered_shp']
-    test = loop_files(files, testlat, testlon)
-    print(test)
-
-    print(get_area_data('endangered_shp', testlat, testlon))
+testlat = 53.759180
+testlon = 29.208048
+files = ['endangered_shp', 'critically_endangered_shp']
+test = loop_files(files, testlat, testlon)
+print(test)
