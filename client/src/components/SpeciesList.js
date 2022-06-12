@@ -68,75 +68,86 @@ const SpeciesList = () => {
     },
   };
 
+  console.log(speciesList);
+
   return (
     <>
-      <Container>
-        <br />
-        <h2 style={centerText}>Most Common Threat: {commonThreat}</h2>
-        <br />
-        <Doughnut data={data} />
-      </Container>
-      <br />
-      <Container>
-        <h2>Species List</h2>
-        <ListGroup>
-          {speciesList.map((item) => {
-            let color = "gray";
-            let arrowIcon = <QuestionLg />;
+      {speciesList.length !== 0 ? (
+        <>
+          <Container style={{ maxWidth: "1000px" }}>
+            <br />
+            <h2 style={centerText}>Most Common Threat: {commonThreat}</h2>
+            <br />
+            <Doughnut data={data} />
+          </Container>
+          <br />
+          <Container>
+            <h2>Species List</h2>
+            <ListGroup>
+              {speciesList.map((item) => {
+                let color = "gray";
+                let arrowIcon = <QuestionLg />;
 
-            if (item.population === "Decreasing") {
-              color = "red";
-              arrowIcon = <ArrowDownRight />;
-            } else if (item.population === "Increasing") {
-              color = "green";
-              arrowIcon = <ArrowUpRight />;
-            } else if (item.population === "Stable") {
-              color = "black";
-              arrowIcon = <CheckLg />;
-            }
+                if (item.population === "Decreasing") {
+                  color = "red";
+                  arrowIcon = <ArrowDownRight />;
+                } else if (item.population === "Increasing") {
+                  color = "green";
+                  arrowIcon = <ArrowUpRight />;
+                } else if (item.population === "Stable") {
+                  color = "black";
+                  arrowIcon = <CheckLg />;
+                }
 
-            const style = {
-              color: color,
-            };
+                const style = {
+                  color: color,
+                };
 
-            const externalLinkStyle = {
-              color: "gray",
-              cursor: "pointer",
-            };
+                const externalLinkStyle = {
+                  color: "gray",
+                  cursor: "pointer",
+                };
 
-            return (
-              <ListGroup.Item>
-                <Container>
-                  <Row>
-                    <Col>
-                      <h3>
-                        <i>{item.name}</i>{" "}
-                        <BoxArrowUpRight
-                          style={externalLinkStyle}
-                          onClick={() => {
-                            window.open(item.url);
-                          }}
-                        />
-                      </h3>
-                      <h5>
-                        Population Trend:{" "}
-                        <span style={style}>
-                          {item.population}
-                          {arrowIcon}
-                        </span>
-                      </h5>
-                    </Col>
-                    <Col xs={3} style={centerText}>
-                      {item.imageURL && <img src={item.imageURL}></img>}
-                      {!item.imageURL && "No image"}
-                    </Col>
-                  </Row>
-                </Container>
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
-      </Container>
+                return (
+                  <ListGroup.Item>
+                    <Container>
+                      <Row>
+                        <Col>
+                          <h3>
+                            <i>{item.name}</i>{" "}
+                            <BoxArrowUpRight
+                              style={externalLinkStyle}
+                              onClick={() => {
+                                window.open(item.url);
+                              }}
+                            />
+                          </h3>
+                          <h5>
+                            Population Trend:{" "}
+                            <span style={style}>
+                              {item.population}
+                              {arrowIcon}
+                            </span>
+                          </h5>
+                        </Col>
+                        <Col xs={3} style={centerText}>
+                          {item.imageURL && <img src={item.imageURL}></img>}
+                          {!item.imageURL && "No image"}
+                        </Col>
+                      </Row>
+                    </Container>
+                  </ListGroup.Item>
+                );
+              })}
+            </ListGroup>
+          </Container>{" "}
+        </>
+      ) : (
+        <>
+          <br />
+          <h1 style={centerText}>No species found</h1>
+        </>
+      )}
     </>
   );
 };
