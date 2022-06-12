@@ -1,26 +1,13 @@
+from typing import OrderedDict
 from flask import Flask, jsonify, request
 import json
+import get_species as gs
+import crawl
+
 
 app = Flask(__name__)
 
-# filterList = ["family", "genus"]
 
-# data = {
-# 	"location A": [ {
-# 		"scientific_name": "Physeter macrocephalus",
-# 		"family": "Physeteridae",
-# 		"genus": "Physeter",
-# 	}, {
-# 		"scientific_name": "Thunnus thynnus",
-# 		"family": "Scombridae",
-# 		"genus": "Thunnus"
-# 	}], 
-# 	"location B" : [{
-# 		"scientific_name": "Thunnus maccoyii",
-# 		"family": "Scombridae",
-# 		"genus": "Thunnus",
-# 	}]
-# }
 
 @app.route("/search", methods=['POST'])
 def search():	
@@ -30,14 +17,30 @@ def search():
 	latitude = json_data["latitude"]
 	longitude = json_data["longitude"]
 
-	radius = json_data["radius"]
+	files = []
+	cat2Files = OrderedDict([
+		("EX", "extinct_shp"),
+		("EW", "extinct_in_wild_shp"),
+		("CR", "critically_endangered_shp"),
+		("EN", "endangered_shp"),
+		("VU", "vulnerable_shp"),
+		("LR", "lower_risk_shp"),
+		("NT", "near_threatened_shp"),
+		("LC", "least_concern_shp"),
+		("DD", "data_deficient_shp"),
+	])
 
-	filter = json_data["filter"]
+	cat = json_data["filter"]["category"]
+	for k, v in cat.items():
+		if v:
+			files.append(cat2Files[k])
 	
-	print(latitude, longitude, radius, filter)
 
-	# TODO: 
+	urlsList = gs.loop_files(files, lat=latitude, lon=longitude)
+	for urls in urlsList:
+		crawl.crawler(urls)
 
+	# TODO: find the common threats
 
 	response = []
 	response = jsonify(json_data)

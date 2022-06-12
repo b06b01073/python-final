@@ -1,33 +1,42 @@
 from bs4 import BeautifulSoup
-import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+from selenium.webdriver.chrome.service import Service
+# from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 
-url = "https://www.iucnredlist.org/species/41671/45231087"
+# import os
+# os.chdir("C:/Users/user/Dropbox/Courses/Python/Final_project") #dir
 
 # download chromedrive: https://chromedriver.chromium.org/downloads
-driver = webdriver.Chrome("./chromedriver")
 
-# crawl the page by selenium 
-driver.get(url)
+def crawler(urls):
+    driver = webdriver.Chrome('./chromedriver')
 
-# sleep for 3 secs to make sure the page is loaded completely
-time.sleep(3)
+    dict = {}
 
-html = driver.page_source
+    for url in urls:
+        # crawl the page by selenium
+        # try:
+        dict.setdefault(url, [])
+        driver.get(url)
 
-# pass the crawled page to beautifulsoup
-soup = BeautifulSoup(html, "html.parser")
+        # sleep for 3 secs to make sure the page is loaded completely
+        time.sleep(2)
 
-# select the <div> with id "threats-details"
-result = soup.find("div", {"id": "threats-details"})
+        html = driver.page_source
 
-# write the result to ./result.txt
-with open("result.txt", "w", encoding='utf-8') as f:
-    f.write(result.prettify())
+        # pass the crawled page to beautifulsoup
+        soup = BeautifulSoup(html, "html.parser")
 
+        # select the <div> with id "threats-details"
+        result = soup.find("div", {"id": "threats-details"})
 
+        for row in result.tbody.find_all('tr', recursive=False):
+            threat = row.find('td').text
+            if len(threat) != 0:
+                dict[url].append(threat)
 
-
+    return dict
