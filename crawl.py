@@ -3,14 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.chrome.service import Service
-# from webdriver_manager.chrome import ChromeDriverManager
 
 import time
 
-# import os
-# os.chdir("C:/Users/user/Dropbox/Courses/Python/Final_project") #dir
-
-# download chromedrive: https://chromedriver.chromium.org/downloads
 
 def crawler(urls):
     driver = webdriver.Chrome('./chromedriver')
@@ -41,6 +36,4 @@ def crawler(urls):
             if len(threat) != 0:
                 dict[url].append(threat)
 
-        with open('result.txt', 'w') as f:
-            f.write(str(dict))
     return dict
