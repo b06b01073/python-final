@@ -24,7 +24,7 @@ def search():
 		("CR", "critically_endangered_shp"),
 		("EN", "endangered_shp"),
 		("VU", "vulnerable_shp"),
-		("LR", "lower_risk_shp"),
+		("LR", "conservation_dependent_shp"),
 		("NT", "near_threatened_shp"),
 		("LC", "least_concern_shp"),
 		("DD", "data_deficient_shp"),
@@ -37,10 +37,14 @@ def search():
 	
 
 	urlsList = gs.loop_files(files, lat=latitude, lon=longitude)
+	speciesDict = dict()
+
 	for urls in urlsList:
-		crawl.crawler(urls)
+		speciesDict.update(crawl.crawler(urls))
 
 	# TODO: find the common threats
+
+	print(speciesDict)
 
 	response = []
 	response = jsonify(json_data)

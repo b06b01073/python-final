@@ -20,6 +20,8 @@ def crawler(urls):
     for url in urls:
         # crawl the page by selenium
         # try:
+
+        # change url to scientific name
         dict.setdefault(url, [])
         driver.get(url)
 
@@ -39,4 +41,6 @@ def crawler(urls):
             if len(threat) != 0:
                 dict[url].append(threat)
 
+        with open('result.txt', 'w') as f:
+            f.write(str(dict))
     return dict
