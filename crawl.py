@@ -7,8 +7,7 @@ from selenium.webdriver.chrome.service import Service
 
 import time
 
-# import os
-# os.chdir("C:/Users/user/Dropbox/Courses/Python/Final_project") #dir
+
 
 # download chromedrive: https://chromedriver.chromium.org/downloads
 
