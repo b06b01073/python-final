@@ -3,9 +3,19 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 from selenium.webdriver.chrome.service import Service
+<<<<<<< HEAD
 
 import time
 
+=======
+
+
+import time
+
+
+
+# download chromedrive: https://chromedriver.chromium.org/downloads
+>>>>>>> 33a7fd29ca84948ca9a6db75154517519827e327
 
 def crawler(urls):
     driver = webdriver.Chrome('./chromedriver')
