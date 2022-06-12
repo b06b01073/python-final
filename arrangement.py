@@ -1,39 +1,22 @@
-with open("result.txt") as f:
-    str_in_file = str(f.readlines())
-    species_number = str_in_file.count("https")
-    raw_list = str_in_file.split(": {'")
-    raw_list.remove(raw_list[0])
+def getCommonThreat(speciesDict):
+    list1 = list(speciesDict.values())
+    counter = {}
 
-#get the threats
-species_threats_dict = {}
-all_threats_set = set()
+    for ls in list1:
+        for threat in ls:
+            threat = threat[threat.find('. ')+2:]
+            if threat not in counter:
+                counter[threat] = 1
+            else:
+                counter[threat] += 1
 
-for i in range(species_number):
-    single_threat = raw_list[i].split("]]")
+    a = 0
+    common_threat = ""
+    for num in counter.values():
+        if a < num:
+            a = num
 
-    for j in range(raw_list[i].count(": ")):
-        if single_threat[j].find(", '") == 0:
-            single_threat[j] = single_threat[j][3:]
-        single_threat[j] = single_threat[j][single_threat[j].find(". ")+2:single_threat[j].find("': ")]
-
-    single_threat.remove(single_threat[-1])
-    species_threats_dict[i] = single_threat
-    all_threats_set = all_threats_set | set(single_threat)
-
-#all_threats_list consists of all kinds of threats
-all_threats_list = list(all_threats_set)
-frequency = []
-
-
-#the frequency of each threat
-for i in range(len(all_threats_list)):
-    frequency.append(0)
-    for j in range(species_number):
-        if all_threats_list[i] in species_threats_dict[j]:
-            frequency[i] += 1
-
-
-#print the threats with the highest frequency 
-for i in range(len(all_threats_list)):
-    if frequency[i] == max(frequency):
-        print(all_threats_list[i])
+    for threat in counter.keys():
+        if counter[threat] == a:
+            common_threat = threat
+    return common_threat, counter

@@ -4,22 +4,21 @@ from selenium.webdriver.common.by import By
 
 from selenium.webdriver.chrome.service import Service
 
-
 import time
 
 
-
-def crawler(urls):
+def crawler(urls, names):
     driver = webdriver.Chrome('./chromedriver')
 
-    dict = {}
+    res = {}
 
-    for url in urls:
+
+    for url, name in zip(urls, names):
         # crawl the page by selenium
-        # try:
 
         # change url to scientific name
-        dict.setdefault(url, [])
+        res.setdefault(url, dict())
+        res[url]["threat"] = []
         driver.get(url)
 
         # sleep for 3 secs to make sure the page is loaded completely
@@ -36,6 +35,16 @@ def crawler(urls):
         for row in result.tbody.find_all('tr', recursive=False):
             threat = row.find('td').text
             if len(threat) != 0:
-                dict[url].append(threat)
+                res[url]["threat"].append(threat)
 
-    return dict
+        res[url]["population"] = soup.find("p", {"class": "species-population-panel"}).text
+
+
+        imageTag = soup.find('a', {"class": "featherlight__gallery__image"})
+        res[url]["imageURL"] = imageTag['href'] if imageTag else None
+        res[url]["name"] = name
+
+
+
+
+    return res

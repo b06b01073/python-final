@@ -16,3 +16,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+img {
+    width: 70%;
+    height: 100%;
+}

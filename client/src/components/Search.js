@@ -11,19 +11,21 @@ import {
   ButtonGroup,
   Accordion,
 } from "react-bootstrap";
+import { Send, Funnel, GeoAlt } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 
 const serverURL = "http://localhost:5000/search";
 
 const redListCategory = [
-  "EX - Extinct",
-  "EW - Extinct In The Wild",
+  // "EX - Extinct",
+  // "EW - Extinct In The Wild",
   "CR - Critically Endangered",
   "EN - Endangered",
   "VU - Vulnerable",
   "LR/cd - Lower Risk: Conservation Dependent",
   "NT or LR/nt - Near Threatened",
-  "LC or LR/lc - Least Concern",
-  "DD - Data Deficient",
+  // "LC or LR/lc - Least Concern",
+  // "DD - Data Deficient",
 ];
 const defaultRadius = 50;
 
@@ -32,6 +34,8 @@ const Search = () => {
     family: "",
     genus: "",
   };
+
+  const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
   const [filterProps, setFilterProps] = useState(emptyFilter);
@@ -85,8 +89,6 @@ const Search = () => {
     setShowModal(false);
     setFilterProps(tempFilterProps);
     setCheckedState(tempCheckedState);
-
-    console.log(tempCheckedState);
 
     if (tempRadius !== "" && !isNaN(Number(tempRadius))) setRadius(tempRadius);
   };
@@ -148,7 +150,7 @@ const Search = () => {
       .then((res) => {
         return res.json();
       })
-      .then((data) => console.log("response", data));
+      .then((data) => navigate("/list", { state: data }));
   };
 
   const checkListJSX = redListCategory.map((type, index) => {
@@ -165,6 +167,8 @@ const Search = () => {
     );
   });
 
+  const style = { textAlign: "center" };
+
   return (
     <>
       <Modal centered show={showModal}>
@@ -174,50 +178,10 @@ const Search = () => {
 
         <Modal.Body>
           <Accordion>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>Taxonomy</Accordion.Header>
-
-              <Accordion.Body>
-                <Form>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Family</Form.Label>
-                    <Form.Control
-                      value={tempFilterProps.family}
-                      onChange={onSetTempFilterFamily}
-                      placeholder="Enter Family"
-                    />
-                  </Form.Group>
-
-                  <Form.Group className="mb-3">
-                    <Form.Label>Genus</Form.Label>
-                    <Form.Control
-                      placeholder="Enter Genus"
-                      value={tempFilterProps.genus}
-                      onChange={onSetTempFilterGenus}
-                    />
-                  </Form.Group>
-                </Form>
-              </Accordion.Body>
-            </Accordion.Item>
             <Accordion.Item eventKey="1">
               <Accordion.Header>Red List Category</Accordion.Header>
               <Accordion.Body>
                 <Form>{checkListJSX}</Form>
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>Radius(in kilometers)</Accordion.Header>
-              <Accordion.Body>
-                <Form>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Radius(Default: 50km)</Form.Label>
-                    <Form.Control
-                      value={tempRadius}
-                      onChange={onSetTempRadius}
-                      placeholder="Default: 50km"
-                    />
-                  </Form.Group>
-                </Form>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
@@ -256,16 +220,19 @@ const Search = () => {
 
         <br />
         <Container>
-          <Row className="justify-content-center">
-            <Col lg={6}>
+          <Row className="justify-content-center" style={style}>
+            <Col lg={10}>
               <ButtonGroup aria-label="Basic example">
                 <Button variant="primary" size="lg" onClick={getCurrentCoords}>
+                  <GeoAlt />
                   Use My Current Location
                 </Button>
                 <Button variant="success" size="lg" onClick={onSetShowModal}>
+                  <Funnel />
                   Filter
                 </Button>
                 <Button variant="dark" size="lg" onClick={submitHandler}>
+                  <Send />
                   Submit
                 </Button>
               </ButtonGroup>
